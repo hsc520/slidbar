@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style type="text/css">
+		*{ margin: 0;padding: 0;}
+		li{ list-style: none;}
+		a{ text-decoration: none;}
+		button,input,textarea,select{ outline: none;}
+		body,html{ overflow-x: hidden; position: relative;}
+		.header{ height: 0.88rem; position: relative;}
+		.header .logo{ height: 0.88rem; float: left; margin-left: 15px;}
+		.header .logo a{ display: table-cell; vertical-align: middle; height: 0.88rem;}
+		.header .logo img{ display: block; max-height: 0.56rem;}
+		.nav_toggle{ position: absolute;right: 15px;border: none; background: none; height: 0.38rem;overflow: hidden;top:50%;margin-top: -0.19rem;transition:all 0.8s;}
+		.nav_toggle span{ display: block; width: 0.43rem;height: 0.04rem; background: #666666;margin-bottom: 0.13rem;}
+		.navbar{ position: absolute; width: 100%; background: #e6e6e6;top:0; width: 45%;right:-45%;transition:all 0.8s;}
+		.navbar.active{ right: 0;}
+		.navbar li{ height: 0.5rem; line-height: 0.5rem; font-size: 0.3rem; font-family: '微软雅黑';}
+		.navbar li a{ display: block; color: #e94729; padding: 0 15px;}
+		.nav_toggle.active{transform:rotate(360deg);right:50%;}
+	</style>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/myJs.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var bodyHeight = $("body,html").height();
+			console.log(bodyHeight)
+			$(".navbar").css({"height":bodyHeight+'px'})
+			$(".nav_toggle").click(function(){
+				/*$(".header .navbar").slideToggle(300);*/
+				$(this).toggleClass("active");
+				$(".navbar").toggleClass("active");
+			})
+		})
+	</script>
+	
+</head>
+<body style="height:1000px">
+	<header class="header">
+		<div class="logo">
+			<a href="###"><img src="images/logo.png"></a>
+		</div>
+		<button class="nav_toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+	</header>
+	<div class="navbar">
+		<ul>
+			<li><a href="###">首页</a></li>
+			<li><a href="###">公司介绍</a></li>
+			<li><a href="###">新闻中心</a></li>
+			<li><a href="###">产品中心</a></li>
+			<li><a href="###">联系我们</a></li>
+		</ul>
+	</div>
+</body>
+</html>
